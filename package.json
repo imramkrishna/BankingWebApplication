@@ -1,0 +1,19 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "This is a banking system.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ram Krishna Yadav",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3"
+  }
+}

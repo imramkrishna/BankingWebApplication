@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Opened</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: none;
+}
+
+button {
+    background: #0ba744;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #62c492;
+}
+
+.hidden {
+    display: none;
+}
+
+#messageDisplay h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 2rem;
+}
+
+#messageDisplay p {
+    font-size: 1.2rem;
+    color: #555;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Account Opened!!!!</h1>
+        
+        <div id="messageDisplay">
+            
+            <p id="messageContent">
+                Welcome to World Bank!<br>
+
+                Dear user,<br>
+                
+                Congratulations and welcome to the World bank family! 🎉 We’re delighted to have you on board and are committed to providing you with excellent service, innovative solutions, and the security you deserve.
+                
+                Your new account is now active, and you can start enjoying the following benefits:
+                
+                    24/7 Online and Mobile Banking: Manage your finances anytime, anywhere.
+                    Secure Transactions: Your safety is our priority.
+                    Customer Support: Always here to help, whenever you need us.   <br>
+                
+                To get started, here’s what you can do next: <br>
+                
+                    Activate Online Banking: Login using your email and password <br>
+                
+                We’re here to assist you every step of the way. If you have any questions or need help, feel free to reach out to us at +9123456789 or visit your nearest branch. <br>
+                
+                Thank you for choosing World Bank. We look forward to helping you achieve your financial goals! <br>
+                
+                Warm regards, <br>
+                Team World Bank
+            </p>
+        </div>
+        <button type="button" class="login">Go to login page</button>
+    </div>
+    <script>
+        document.querySelector(".login").addEventListener("click",()=>{
+            window.location.href="/";
+        })
+
+    </script>
+</body>
+</html>

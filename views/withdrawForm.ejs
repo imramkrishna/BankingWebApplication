@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdraw Form</title>
+
+<style>
+/* import from fonts.css file */
+@import url(./fonts.css);
+
+/* Body */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #2d2c2c;
+  --purple-solid: #672480;
+  --purple-light: #8f50fb;
+  --yellow-solid: #fa9e2c;
+  --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
+  --gradient-color-alt: linear-gradient(to right, var(--purple-light), var(--yellow-solid));
+}
+
+/* Global Style */
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 1.6rem;
+  color: var(--dark-color);
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* Container style */
+.container {
+  width: 80%;
+  max-width: 120rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  display: block;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.sub-heading {
+  font-size: 1.7rem;
+  font-family: 'courgette', cursive;
+  font-weight: 300;
+  color: #a5a5a5;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 100%;
+  background-image: var(--gradient-color);
+  padding: 2.5rem;
+  border-radius: 3rem;
+}
+
+.contact-form .input {
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  font-weight: normal;
+  border-bottom: 2px solid #fff;
+  padding-left: 0;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.input {
+  outline: none;
+  border: none;
+  width: 100%;
+  min-width: 4rem;
+  padding: 1rem;
+  font-weight: bold;
+  color: #a5a5a5;
+  letter-spacing: 2px;
+  font-family: 'Open Sans', 'sans-serif';
+}
+
+::placeholder {
+  color: inherit;
+}
+
+.bar {
+  display: block;
+  position: relative;
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--purple-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: tranform .5s;
+}
+
+.contact-form .input:focus+.bar::after {
+  transform: scaleX(1);
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  align-items: center;
+  display: inline-flex;
+}
+
+.form-btn {
+  margin-top: 2.5rem;
+  cursor: pointer;
+  background-color: var(--purple-solid);
+}
+
+.form-btn:hover {
+  background-color: var(--purple-light);
+  color: #fff;
+}
+
+.dots {
+  font-size: 2.4rem;
+  margin-left: .5rem;
+  opacity: .75;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-form {
+    flex: 0 0 50%;
+    align-self: flex-start;
+  }
+
+  .input-group-wrap {
+    display: flex;
+  }
+
+  .input-group-wrap .input-group {
+    width: 50%;
+    margin-right: 2rem;
+  }
+
+  .input-group-wrap .input-group:last-child {
+    margin-right: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+  <main>
+    <section class="contact">
+      <div class="container">
+        <h2 class="section-head">
+          <span class="heading">Withdrawal Slip</span>
+          <span class="sub-heading">Withdraw your money with ease</span>
+        </h2>
+        <div class="contact-form">
+          <form action="/withdrawValidation" method="post">
+            <div class="input-group">
+              <input type="text" name="name" id="name" class="input" placeholder="Withdrawer's Name" required>
+              <span class="bar"></span>
+            </div>
+            <div class="input-group-wrap">
+              <div class="input-group">
+                <input type="email" name="email" id="email" class="input" placeholder="Account Email" required>
+                <span class="bar"></span>
+              </div>
+              <div class="input-group">
+                <input type="tel" name="AccountNumber" id="tel" class="input" placeholder="AccountNumber" required minlength="10" maxlength="10">
+                <span class="bar"></span>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="number" name="amount" class="input" placeholder="Deposit Amount" required min="0.01" step="0.01" maxlength="5">
+              <span class="bar"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" name="password" class="input" placeholder="Acccount Password" required minlength="6">
+                <span class="bar"></span>
+              </div>
+            <div class="input-group">
+              <textarea class="input" cols="30" rows="5" placeholder="Message" required>Important Notice: Please be aware that once a withdrawal transaction is completed, it cannot be reversed. We strongly advise you to double-check all details, including the account number, the name of the account holder, and the withdrawal amount, before proceeding. By submitting the transaction, you confirm that all information provided is accurate and final.</textarea>
+              <span class="bar"></span>
+            </div>
+            <div class="btn-div">
+              <button type="submit" class="btn form-btn">Withdraw</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

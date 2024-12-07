@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Portal</title>
+    <style>
+        body {
+            background-color: #f5f6fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 20px;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .account {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #bdc3c7;
+        }
+
+        .account:last-child {
+            border-bottom: none;
+        }
+
+        .account-name {
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        .account-balance {
+            font-size: 18px;
+            color: #27ae60;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .text{
+            color: #34495e;
+            
+        }
+        .red{
+            background-color: #ac453a;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Welcome to World Bank Portal</h1>
+    </div>
+    <div class="container">
+        <h2><%=user.Name%></h2>
+        
+        <div class="account">
+            <div class="account-name">Account Balance</div>
+            <div class="account-balance"> $<%=user.Balance%></div>
+        </div>
+        <div class="account">
+            <div class="account-name">Account Number</div>
+            <div class="account-balance text"><%=user.AccountNumber%>  </div>
+        </div>
+        <div class="account">
+            <div class="account-name">Email</div>
+            <div class="account-balance text"><%=user.email%></div>
+        </div>
+        <a href="/depositForm" class="btn">Deposit</a>
+        <a href="/withdrawForm" class="btn">Withdraw</a>
+        <a href="/" class="btn red">Logout</a>
+        
+        
+        
+    </div>
+    <div class="footer">
+        &copy; 2024 World Bank. All rights reserved.
+    </div>
+   
+ 
+
+    <script>
+        
+    </script>
+    <script>
+        // JavaScript functionality can be added here
+    </script>
+</body>
+</html>
