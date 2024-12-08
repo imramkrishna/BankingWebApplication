@@ -5,7 +5,7 @@ import User from "../models/formdata.js";
 
 
 
-mongoose.connect('mongodb://localhost:27017/BankingDB', {
+mongoose.connect('mongodb+srv://BankingApp:ramkrishna@cluster0.vr9m2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
