@@ -37,10 +37,14 @@ const checkCredentials = async (req, res, next) => {
 };
 router.post('/', checkCredentials, async(req, res) => {
     if (req.user) {
-        if(req.user.Balance<=req.body.amount){
+        var { email} = req.body;
+        var email=email.toLowerCase();
+        const userExists = await User.findOne({ email});
+
+        if(req.userExists.Balance<req.body.amount){
             return res.status(500).send("Insufficient balance");
         }else{
-        await user.updateOne(
+        await userExists.updateOne(
             { $inc: { Balance: -req.body.amount } }
         );
         await req.user.save();
