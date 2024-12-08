@@ -43,7 +43,7 @@ router.post('/', checkCredentials, async(req, res) => {
         await userExists.updateOne(
             { $inc: { Balance: -req.body.amount } }
         );
-        await req.userExists.save();
+        await userExists.save();
 
         res.send("Withdrawal successful");
         
