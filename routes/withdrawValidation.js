@@ -3,7 +3,7 @@ import router from "./registration.js";
 import mongoose from 'mongoose';
 
 
-mongoose.connect('mongodb+srv://BankingApp:ramkrishna@cluster0.vr9m2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

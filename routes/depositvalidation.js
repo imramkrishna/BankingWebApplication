@@ -5,7 +5,7 @@ import User from "../models/formdata.js";
 
 
 
-mongoose.connect('mongodb+srv://BankingApp:ramkrishna@cluster0.vr9m2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -15,7 +15,6 @@ mongoose.connect('mongodb+srv://BankingApp:ramkrishna@cluster0.vr9m2.mongodb.net
 }).catch((err) => {
     console.error('Error connecting to MongoDB', err);
 });
-
 
 const router=express.Router();  
 
