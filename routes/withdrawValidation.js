@@ -16,11 +16,12 @@ mongoose.connect(process.env.MONGO_URL, {
 
      
 
-var { email, password,AccountNumber,amount } = req.body;
-        var email=email.toLowerCase();
-        const user = await User.findOne({ email, password,AccountNumber });
+
 
 const checkCredentials = async (req, res, next) => {
+    var { email, password,AccountNumber,amount } = req.body;
+        var email=email.toLowerCase();
+        const user = await User.findOne({ email, password,AccountNumber });
     try {
         
         if (!user) {
@@ -36,7 +37,7 @@ const checkCredentials = async (req, res, next) => {
 };
 router.post('/', checkCredentials, async(req, res) => {
     if (req.user) {
-        if(req.user.Balance<=amount){
+        if(req.user.Balance<=req.bodyamount){
             return res.status(500).send("Insufficient balance");
         }else{
         await user.updateOne(
