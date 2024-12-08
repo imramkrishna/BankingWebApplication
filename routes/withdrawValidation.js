@@ -37,13 +37,13 @@ router.post('/', checkCredentials, async(req, res) => {
         var email=email.toLowerCase();
         const userExists = await User.findOne({ email});
 
-        if(req.userExists.Balance<req.body.amount){
+        if(userExists.Balance<req.body.amount){
             return res.status(500).send("Insufficient balance");
         }else{
         await userExists.updateOne(
             { $inc: { Balance: -req.body.amount } }
         );
-        await req.user.save();
+        await req.userExists.save();
 
         res.send("Withdrawal successful");
         
