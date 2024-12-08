@@ -36,7 +36,7 @@ router.post("/",async (req,res)=>{
             if(userExists.AccountNumber!=AccountNumber){
                 res.send("Account number does not match with the email");
             }else{
-                await User.updateOne(
+                await userExists.updateOne(
                     { $inc: { Balance: amount } }
                 );
             await userExists.save();
