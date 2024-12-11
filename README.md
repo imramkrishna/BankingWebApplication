@@ -60,4 +60,4 @@ The application requires the following environment variables:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the developer's License. See the [LICENSE](LICENSE) file for details.
